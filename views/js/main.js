@@ -275,44 +275,46 @@ var adjectives = ["dark", "color", "whimsical", "shiny", "noise", "apocalyptic",
 var nouns = ["animals", "everyday", "fantasy", "gross", "horror", "jewelry", "places", "scifi"];                        // types of nouns for pizza titles
 
 // Generates random numbers for getAdj and getNoun functions and returns a new pizza name
-function generator() {
-  var randomAdjective, randomNoun = randomName(adjectives, nouns);
-  var adjectives = getAdj(randomAdjective);
-  var nouns = getNoun(randomNoun);
+function generator(adj, noun) {
+  var adjectives = getAdj(adj);
+  var nouns = getNoun(noun);
+  var randomAdjective = parseInt(Math.random() * adjectives.length);
+  var randomNoun = parseInt(Math.random() * nouns.length);
   var name = "The " + adjectives[randomAdjective].capitalize() + " " + nouns[randomNoun].capitalize();
   return name;
 };
 
 // Chooses random adjective and random noun
-function randomName(adj, noun) {
-  var randomNumberAdj = parseInt(Math.random() * adj.length);
-  var randomNumberNoun = parseInt(Math.random() * noun.length);
-  return adj[randomNumberAdj], noun[randomNumberNoun];
+function randomName() {
+  var randomNumberAdj = parseInt(Math.random() * adjectives.length);
+  var randomNumberNoun = parseInt(Math.random() * nouns.length);
+  return generator(adjectives[randomNumberAdj], nouns[randomNumberNoun]);
 };
-
-var randomNum = function(len) {
-  return Math.floor(Math.random() * len)
-}
 
 // These functions return a string of a random ingredient from each respective category of ingredients.
 var selectRandomMeat = function() {
-  return pizzaIngredients.meats[randomNum(pizzaIngredients.meats.length)];
+  var randomMeat = pizzaIngredients.meats[Math.floor((Math.random() * pizzaIngredients.meats.length))];
+  return randomMeat;
 }
 
 var selectRandomNonMeat = function() {
-  return pizzaIngredients.nonMeats[randomNum(pizzaIngredients.nonMeats.length)];
+  var randomNonMeat = pizzaIngredients.nonMeats[Math.floor((Math.random() * pizzaIngredients.nonMeats.length))];
+  return randomNonMeat;
 }
 
 var selectRandomCheese = function() {
-  return pizzaIngredients.cheeses[randomNum(pizzaIngredients.cheeses.length)];
+  var randomCheese = pizzaIngredients.cheeses[Math.floor((Math.random() * pizzaIngredients.cheeses.length))];
+  return randomCheese;
 }
 
 var selectRandomSauce = function() {
-  return pizzaIngredients.sauces[randomNum(pizzaIngredients.sauces.length)];
+  var randomSauce = pizzaIngredients.sauces[Math.floor((Math.random() * pizzaIngredients.sauces.length))];
+  return randomSauce;
 }
 
 var selectRandomCrust = function() {
-  return pizzaIngredients.crusts[randomeNum(pizzaIngredients.crusts.length)];
+  var randomCrust = pizzaIngredients.crusts[Math.floor((Math.random() * pizzaIngredients.crusts.length))];
+  return randomCrust;
 }
 
 var ingredientItemizer = function(string) {
@@ -478,7 +480,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   for (var i = numberOfEntries - 1; i > numberOfEntries - 11; i--) {
     sum = sum + times[i].duration;
   }
-  console.log("Average time to generate last 60 frames: " + (sum / 10)*60 + "ms");
+  console.log("Average time to generate last 60 frames: " + (sum / 10)*6 + "ms");
 }
 
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
