@@ -290,30 +290,29 @@ function randomName(adj, noun) {
   return adj[randomNumberAdj], noun[randomNumberNoun];
 };
 
+var randomNum = function(len) {
+  return Math.floor(Math.random() * len)
+}
+
 // These functions return a string of a random ingredient from each respective category of ingredients.
 var selectRandomMeat = function() {
-  var randomMeat = pizzaIngredients.meats[Math.floor((Math.random() * pizzaIngredients.meats.length))];
-  return randomMeat;
+  return pizzaIngredients.meats[randomNum(pizzaIngredients.meats.length)];
 }
 
 var selectRandomNonMeat = function() {
-  var randomNonMeat = pizzaIngredients.nonMeats[Math.floor((Math.random() * pizzaIngredients.nonMeats.length))];
-  return randomNonMeat;
+  return pizzaIngredients.nonMeats[randomNum(pizzaIngredients.nonMeats.length)];
 }
 
 var selectRandomCheese = function() {
-  var randomCheese = pizzaIngredients.cheeses[Math.floor((Math.random() * pizzaIngredients.cheeses.length))];
-  return randomCheese;
+  return pizzaIngredients.cheeses[randomNum(pizzaIngredients.cheeses.length)];
 }
 
 var selectRandomSauce = function() {
-  var randomSauce = pizzaIngredients.sauces[Math.floor((Math.random() * pizzaIngredients.sauces.length))];
-  return randomSauce;
+  return pizzaIngredients.sauces[randomNum(pizzaIngredients.sauces.length)];
 }
 
 var selectRandomCrust = function() {
-  var randomCrust = pizzaIngredients.crusts[Math.floor((Math.random() * pizzaIngredients.crusts.length))];
-  return randomCrust;
+  return pizzaIngredients.crusts[randomeNum(pizzaIngredients.crusts.length)];
 }
 
 var ingredientItemizer = function(string) {
