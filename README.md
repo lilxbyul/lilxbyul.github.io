@@ -28,6 +28,8 @@ Some useful tips to help you get started:
 
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
+In the file main.js for pizza.html, I took the document.body.ScrollTop and document.querySelectorAll out of the loop as it too expensive to run every time the loop is entered.  In respect to those two changes in code, page rendered and refreshed quicker.
+
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
